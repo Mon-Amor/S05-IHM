@@ -67,7 +67,7 @@ header .logo {
 .theme-button {
     margin: 5px 0;
     padding: 10px;
-    background-color: var(--primary-color-light); /* Azul Inatel no botão */
+    background-color: #7a0385; /* Azul Inatel no botão */
     color: white;
     border: none;
     cursor: pointer;
