@@ -46,7 +46,7 @@ header .icon {
 }
 
 header .logo {
-    font-size: 150px;
+    font-size: 100px;
     font-weight: bold;
     color: var(--secondary-color-light); /* Logo branco */
 }
