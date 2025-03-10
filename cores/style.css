@@ -43,9 +43,9 @@ header .icon {
 }
 
 header .logo {
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
-    color: var(--primary-color-dark); /* Azul Inatel para o logo */
+    color: var(--primary-color-light); /* Azul Inatel para o logo */
 }
 
 /* Menu de troca de tema */
