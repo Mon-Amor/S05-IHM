@@ -7,12 +7,16 @@ body {
 
 /* Cores e estilos dos temas */
 :root {
-    --primary-color-light: #ffffff;
-    --primary-color-dark: #2d004f; /* Fundo escuro com tom de rosa */
-    --secondary-color-light: #f0f0f0;
-    --secondary-color-dark: #4c1c75; /* Tom mais escuro de rosa */
-    --text-color-light: #333333;
-    --text-color-dark: #f1a7d6; /* Cor do texto em tom de rosa claro */
+    /* Tema claro - cores do Inatel */
+    --primary-color-light: #FFFFFF; /* Branco */
+    --secondary-color-light: #F2F2F2; /* Cinza Claro */
+    --text-color-light: #333333; /* Texto escuro */
+
+    /* Tema escuro - ajuste de contraste */
+    --primary-color-dark: #2C2C2C; /* Cinza Escuro */
+    --secondary-color-dark: #003366; /* Azul Inatel */
+    --text-color-dark: #FFFFFF; /* Texto branco */
+    --highlight-color-dark: #FFD700; /* Amarelo Inatel */
 }
 
 .theme-light {
@@ -30,8 +34,8 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #d5006e; /* Rosa vibrante no cabeçalho */
-    color: #ffffff;
+    background-color: var(--secondary-color-light); /* Cinza Claro no cabeçalho */
+    color: var(--text-color-light);
 }
 
 header .icon {
@@ -41,6 +45,7 @@ header .icon {
 header .logo {
     font-size: 24px;
     font-weight: bold;
+    color: var(--primary-color-dark); /* Azul Inatel para o logo */
 }
 
 /* Menu de troca de tema */
@@ -57,7 +62,7 @@ header .logo {
 .theme-button {
     margin: 5px 0;
     padding: 10px;
-    background-color: #d5006e; /* Rosa vibrante no botão */
+    background-color: var(--secondary-color-dark); /* Azul Inatel no botão */
     color: white;
     border: none;
     cursor: pointer;
@@ -66,7 +71,7 @@ header .logo {
 }
 
 .theme-button:hover {
-    background-color: #a0004c; /* Rosa mais escuro no hover */
+    background-color: var(--highlight-color-dark); /* Amarelo no hover */
 }
 
 /* Seção de mensagens */
@@ -86,6 +91,7 @@ header .logo {
     background-color: var(--secondary-color-dark);
     padding: 15px;
     border-radius: 8px;
+    color: var(--text-color-light);
 }
 
 .disciplina h2 {
@@ -105,6 +111,7 @@ header .logo {
     background-color: var(--secondary-color-dark);
     padding: 15px;
     border-radius: 8px;
+    color: var(--text-color-light);
 }
 
 .card h2 {
