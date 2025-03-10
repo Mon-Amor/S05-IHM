@@ -17,9 +17,9 @@ body {
     /* Tema escuro - ajuste de contraste */
     --primary-color-dark: #003366; /* Azul Inatel */
     --secondary-color-dark: #ffffff; /* Branco */
-    --text-color-dark: #003366; /* Azul Inatel para o texto */
+    --text-color-dark: #ffffff; /* Texto branco fora das caixas no tema escuro */
     --box-background-dark: #ffffff; /* Caixa branca no tema escuro */
-    --box-text-dark: #003366; /* Texto azul nas caixas */
+    --box-text-dark: #003366; /* Texto azul dentro das caixas */
     --button-color: #6A1B9A; /* Roxo para os botões */
     --button-hover-color: #4a148c; /* Roxo mais escuro no hover */
 }
@@ -31,7 +31,7 @@ body {
 
 .theme-dark {
     background-color: var(--primary-color-dark);
-    color: var(--text-color-dark);
+    color: var(--text-color-dark); /* Texto branco no tema escuro */
 }
 
 /* Cabeçalho */
@@ -137,4 +137,8 @@ header .logo {
 .theme-dark .card {
     background-color: var(--box-background-dark); /* Caixa branca no tema escuro */
     color: var(--box-text-dark); /* Texto azul dentro das caixas no tema escuro */
+}
+
+.theme-dark {
+    color: var(--text-color-dark); /* Texto branco fora das caixas no tema escuro */
 }
