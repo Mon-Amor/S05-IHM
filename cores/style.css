@@ -93,10 +93,10 @@ header .logo {
 }
 
 .disciplina {
-    background-color: var(--box-background-light);
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 8px;
-    color: var(--box-text-light); /* Texto branco dentro das caixas no tema claro */
+    color: #003366; /* Texto branco dentro das caixas no tema claro */
 }
 
 .disciplina h2 {
