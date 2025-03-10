@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid e Responsividade</title>
+    <!-- Importando a fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para os ícones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="icon">Icon</div>
+        <div class="logo">Logo</div>
+        <div class="icon">Icon</div>
+    </header>
+
+    <!-- Menu de Troca de Tema -->
+    <div class="theme-menu" id="theme-menu">
+        <button class="theme-button" onclick="changeTheme('theme-light')">Claro</button>
+        <button class="theme-button" onclick="changeTheme('theme-dark')">Escuro</button>
+    </div>
+
+    <!-- Mensagens -->
+    <section class="mensagens">
+        <h1>Olá Raphael</h1>
+        <p>Você possui um armário reservado com entrega para hoje...</p>
+        <p>Você possui uma pendência no financeiro...</p>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="aulas">
+            <article class="disciplina">
+                <h2>Disciplina</h2>
+                <p>Sala e Horário</p>
+                <div class="icones">
+                    <div class="icon">Icon</div>
+                    <div class="icon">Icon</div>
+                    <div class="icon">Icon</div>
+                </div>
+            </article>
+            <article class="disciplina">
+                <h2>Disciplina</h2>
+                <p>Sala e Horário</p>
+                <div class="icones">
+                    <div class="icon">Icon</div>
+                    <div class="icon">Icon</div>
+                    <div class="icon">Icon</div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Notícias -->
+    <section class="noticias">
+        <article class="card">
+            <h2>Card de Notícias</h2>
+            <p>Subtítulo</p>
+        </article>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
