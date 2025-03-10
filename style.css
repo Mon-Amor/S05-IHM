@@ -1,0 +1,70 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    background-color: #f4f4f4;
+}
+
+/* Grid responsivo */
+header, .mensagens, .aulas, .noticias {
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d1e7dd;
+}
+
+.mensagens {
+    background-color: #f8d7da;
+}
+
+main .aulas {
+    background-color: #cfe2ff;
+}
+
+.noticias {
+    background-color: #fefefe;
+}
+
+/* Estilização dos elementos internos */
+header .icon, .icones .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #6c757d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+}
+
+h1, h2, p {
+    margin-bottom: 8px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    main .aulas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
