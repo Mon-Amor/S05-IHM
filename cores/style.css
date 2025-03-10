@@ -8,11 +8,11 @@ body {
 /* Cores e estilos dos temas */
 :root {
     --primary-color-light: #ffffff;
-    --primary-color-dark: #121212;
+    --primary-color-dark: #2d004f; /* Fundo escuro com tom de rosa */
     --secondary-color-light: #f0f0f0;
-    --secondary-color-dark: #1c1c1c;
+    --secondary-color-dark: #4c1c75; /* Tom mais escuro de rosa */
     --text-color-light: #333333;
-    --text-color-dark: #e0e0e0; /* Mudado para uma cor mais clara para legibilidade */
+    --text-color-dark: #f1a7d6; /* Cor do texto em tom de rosa claro */
 }
 
 .theme-light {
@@ -30,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #0077b6;
+    background-color: #d5006e; /* Rosa vibrante no cabeçalho */
     color: #ffffff;
 }
 
@@ -57,7 +57,7 @@ header .logo {
 .theme-button {
     margin: 5px 0;
     padding: 10px;
-    background-color: #0077b6;
+    background-color: #d5006e; /* Rosa vibrante no botão */
     color: white;
     border: none;
     cursor: pointer;
@@ -66,7 +66,7 @@ header .logo {
 }
 
 .theme-button:hover {
-    background-color: #005f8a;
+    background-color: #a0004c; /* Rosa mais escuro no hover */
 }
 
 /* Seção de mensagens */
@@ -83,7 +83,7 @@ header .logo {
 }
 
 .disciplina {
-    background-color: var(--secondary-color-light);
+    background-color: var(--secondary-color-dark);
     padding: 15px;
     border-radius: 8px;
 }
@@ -102,7 +102,7 @@ header .logo {
 }
 
 .card {
-    background-color: var(--secondary-color-light);
+    background-color: var(--secondary-color-dark);
     padding: 15px;
     border-radius: 8px;
 }
