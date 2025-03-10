@@ -36,9 +36,11 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;  /* Para alinhar verticalmente o logo e o ícone */
     padding: 10px 20px;
     background-color: var(--primary-color-light); /* Azul Inatel no cabeçalho */
     color: var(--secondary-color-light);
+    height: 60px; /* Reduzimos a altura da faixa */
 }
 
 header .icon {
@@ -46,7 +48,7 @@ header .icon {
 }
 
 header .logo {
-    font-size: 100px;
+    font-size: 40px; /* Aumentamos o tamanho do logo */
     font-weight: bold;
     color: var(--secondary-color-light); /* Logo branco */
 }
