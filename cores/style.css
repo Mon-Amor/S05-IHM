@@ -12,7 +12,7 @@ body {
     --secondary-color-light: #f0f0f0;
     --secondary-color-dark: #1c1c1c;
     --text-color-light: #333333;
-    --text-color-dark: #ffffff;
+    --text-color-dark: #e0e0e0; /* Mudado para uma cor mais clara para legibilidade */
 }
 
 .theme-light {
@@ -46,12 +46,12 @@ header .logo {
 /* Menu de troca de tema */
 .theme-menu {
     position: fixed;
-    top: 80px; /* Ajuste a posição para deixar mais abaixo */
+    top: 80px;
     right: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Ajuste o espaçamento entre os botões */
+    gap: 10px;
 }
 
 .theme-button {
