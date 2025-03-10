@@ -20,6 +20,8 @@ body {
     --text-color-dark: #003366; /* Azul Inatel para o texto */
     --box-background-dark: #ffffff; /* Caixa branca no tema escuro */
     --box-text-dark: #003366; /* Texto azul nas caixas */
+    --button-color: #6A1B9A; /* Roxo para os botões */
+    --button-hover-color: #4a148c; /* Roxo mais escuro no hover */
 }
 
 .theme-light {
@@ -67,7 +69,7 @@ header .logo {
 .theme-button {
     margin: 5px 0;
     padding: 10px;
-    background-color: #7a0385; /* Azul Inatel no botão */
+    background-color: var(--button-color); /* Roxo no botão */
     color: white;
     border: none;
     cursor: pointer;
@@ -76,7 +78,7 @@ header .logo {
 }
 
 .theme-button:hover {
-    background-color: var(--highlight-color-dark); /* Amarelo no hover */
+    background-color: var(--button-hover-color); /* Roxo mais escuro no hover */
 }
 
 /* Seção de mensagens */
@@ -93,10 +95,10 @@ header .logo {
 }
 
 .disciplina {
-    background-color: #ffffff;
+    background-color: var(--box-background-light); /* Azul Inatel no tema claro */
     padding: 15px;
     border-radius: 8px;
-    color: #003366; /* Texto branco dentro das caixas no tema claro */
+    color: var(--box-text-light); /* Texto branco dentro das caixas no tema claro */
 }
 
 .disciplina h2 {
@@ -113,7 +115,7 @@ header .logo {
 }
 
 .card {
-    background-color: var(--box-background-light);
+    background-color: var(--box-background-light); /* Azul Inatel no tema claro */
     padding: 15px;
     border-radius: 8px;
     color: var(--box-text-light); /* Texto branco dentro das caixas no tema claro */
@@ -128,4 +130,11 @@ header .logo {
     .aulas {
         grid-template-columns: 1fr;
     }
+}
+
+/* Tema escuro - ajustes para a troca de cores */
+.theme-dark .disciplina,
+.theme-dark .card {
+    background-color: var(--box-background-dark); /* Caixa branca no tema escuro */
+    color: var(--box-text-dark); /* Texto azul dentro das caixas no tema escuro */
 }
