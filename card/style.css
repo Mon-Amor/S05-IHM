@@ -202,7 +202,7 @@ h3 {
 p {
     font-family: "Arimo", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400; /* Atualize conforme necessário */
+    font-weight:4 00; /* Atualize conforme necessário */
     font-style: normal;
     font-size: 11px;
     color: var(--text-color-light);
