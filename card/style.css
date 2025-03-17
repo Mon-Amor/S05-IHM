@@ -43,7 +43,7 @@ header {
     padding: 10px 20px;
     background-color: var(--primary-color-light); /* Azul Inatel no cabeçalho */
     color: var(--secondary-color-light);
-    height: 60px; /* Reduzimos a altura da faixa */
+    height: 50px; /* Reduzi a altura do cabeçalho para ser mais compacto */
 }
 
 header .icon {
@@ -51,7 +51,7 @@ header .icon {
 }
 
 header .logo {
-    font-size: 40px; /* Aumentamos o tamanho do logo */
+    font-size: 30px; /* Ajustei o tamanho do logo para se ajustar melhor */
     font-weight: bold;
     color: var(--secondary-color-light); /* Logo branco */
 }
@@ -133,6 +133,7 @@ header .logo {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    color: var(--text-color-light); /* Corrigido para garantir que o texto no card tenha cor */
 }
 
 .card h2 {
@@ -149,8 +150,21 @@ header .logo {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    /* Ajuste para o cabeçalho em telas menores */
+    header {
+        height: 45px; /* Diminuímos um pouco mais o tamanho para telas pequenas */
+    }
+
+    header .logo {
+        font-size: 25px; /* Menor logo em telas pequenas */
+    }
+
     .aulas {
         grid-template-columns: 1fr; /* Exibição em uma coluna em telas pequenas */
+    }
+
+    .carousel-container {
+        margin: 10px; /* Menor margem no carrossel em telas pequenas */
     }
 }
 
