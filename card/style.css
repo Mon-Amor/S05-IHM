@@ -137,19 +137,19 @@ header .logo {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    color: var(--text-color-light); /* Corrigido para garantir que o texto no card tenha cor */
+    color: var(--text-color-dark); /* Corrigido para garantir que o texto no card tenha cor */
     text-align: left;
 }
 
 .card h2 {
     margin: 0 0 10px;
     font-size: 22px; /* Ajuste no tamanho do título */
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
 }
 
 .card p {
     font-size: 14px; /* Ajuste para o texto */
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
     line-height: 1.5;
 }
 
