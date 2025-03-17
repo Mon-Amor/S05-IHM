@@ -108,14 +108,20 @@ header .logo {
 /* Estilo para os ícones nas disciplinas */
 .disciplina .icones {
     display: flex;
-    align-items: center; /* Alinha o ícone e o texto na mesma linha */
-    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    flex-direction: column; /* Faz com que cada ícone + texto seja empilhado em linhas */
+    gap: 15px; /* Adiciona espaço entre cada par ícone + texto */
 }
 
+/* Estilo individual para cada ícone + texto */
+.disciplina .icones .icon-text {
+    display: flex;
+    flex-direction: row; /* Garante que ícone e texto fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente */
+}
+
+/* Estilo para o ícone */
 .disciplina .icones .icon {
-    font-size: 20px; /* Tamanho do ícone */
-    line-height: 1; /* Garante que o ícone fique centralizado verticalmente */
-    display: inline-block; /* Garante que o ícone e o texto fiquem lado a lado */
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
 }
 
 /* Seção de notícias */
