@@ -1,0 +1,187 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arimo', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cores e estilos dos temas */
+:root {
+    /* Tema claro - cores do Inatel */
+    --primary-color-light: #003366; /* Azul Inatel */
+    --secondary-color-light: #ffffff; /* Branco */
+    --text-color-light: #003366; /* Azul Inatel para o texto */
+    --box-background-light: #003366; /* Azul Inatel para as caixas */
+    --box-text-light: #ffffff; /* Texto branco nas caixas */
+
+    /* Tema escuro - ajuste de contraste */
+    --primary-color-dark: #003366; /* Azul Inatel */
+    --secondary-color-dark: #ffffff; /* Branco */
+    --text-color-dark: #ffffff; /* Texto branco fora das caixas no tema escuro */
+    --box-background-dark: #ffffff; /* Caixa branca no tema escuro */
+    --box-text-dark: #003366; /* Texto azul dentro das caixas */
+    --button-color: #6A1B9A; /* Roxo para os botões */
+    --button-hover-color: #4a148c; /* Roxo mais escuro no hover */
+}
+
+.theme-light {
+    background-color: var(--secondary-color-light);
+    color: var(--text-color-light);
+}
+
+.theme-dark {
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark); /* Texto branco no tema escuro */
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color-light);
+    color: var(--secondary-color-light);
+    height: 60px; /* Ajustado para garantir boa visualização */
+}
+
+header .icon {
+    font-size: 24px;
+}
+
+header .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--secondary-color-light);
+}
+
+/* Menu de troca de tema */
+.theme-menu {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.theme-button {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Seção de mensagens */
+.mensagens {
+    margin: 20px;
+}
+
+/* Seção de aulas */
+.aulas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px;
+}
+
+.disciplina {
+    background-color: var(--box-background-light);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--box-text-light);
+}
+
+.disciplina h2 {
+    margin: 0 0 10px;
+}
+
+/* Estilo para os ícones nas disciplinas */
+.disciplina .icones {
+    display: flex;
+    flex-direction: column; /* Faz com que cada ícone + texto seja empilhado em linhas */
+    gap: 15px; /* Adiciona espaço entre cada par ícone + texto */
+}
+
+/* Estilo individual para cada ícone + texto */
+.disciplina .icones .icon-text {
+    display: flex;
+    flex-direction: row; /* Garante que ícone e texto fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente */
+}
+
+/* Estilo para o ícone */
+.disciplina .icones .icon {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Seção de notícias */
+.noticias {
+    margin: 20px;
+}
+
+.card {
+    background-color: var(--box-background-light);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--box-text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 20px; /* Adiciona espaço entre os cards */
+    transition: transform 0.5s ease-in-out; /* inclua a animação */
+}
+
+.card img {
+    max-width: 100%; /* A imagem ocupará 100% da largura disponível */
+    height: auto; /* Manter a proporção da imagem */
+    border-radius: 5px; /* Borda arredondada para a imagem */
+}
+
+.card h2 {
+    margin: 0 0 10px;
+}
+
+/* Ajustando para o tema escuro */
+.theme-dark .card {
+    background-color: var(--box-background-dark);
+    color: var(--box-text-dark);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .aulas {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustando o cabeçalho para telas pequenas */
+    header {
+        height: 50px; /* Diminui a altura para dispositivos móveis */
+    }
+
+    header .logo {
+        font-size: 30px; /* Reduz logo em telas menores */
+    }
+}
+
+/* Tema escuro - ajustes para a troca de cores */
+.theme-dark .disciplina,
+.theme-dark .card {
+    background-color: var(--box-background-dark);
+    color: var(--box-text-dark);
+}
+
+.theme-dark {
+    color: var(--text-color-dark);
+}
