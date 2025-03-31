@@ -3,7 +3,7 @@ const eventos = [
     {
         id: 1,
         title: 'Semana do Software 2025',
-        date: '12/05',
+        date: '2025-05-12',
         time: '10:00',
         location: 'Salão de Eventos',
         type: 'tech',
@@ -13,7 +13,7 @@ const eventos = [
     {
         id: 2,
         title: 'Workshop de IoT',
-        date: '12/01',
+        date: '2025-01-12',
         time: '08:00',
         location: 'Laboratório CS&I',
         type: 'tech',
@@ -23,7 +23,7 @@ const eventos = [
     {
         id: 3,
         title: 'Festa dos Alunos 2025',
-        date: '18/05',
+        date: '2025-05-18',
         time: '19:00',
         location: 'Área Esportiva do Inatel',
         type: 'cultural',
@@ -33,7 +33,7 @@ const eventos = [
     {
         id: 4,
         title: 'Feira de Oportunidades',
-        date: '04/05',
+        date: '2025-05-04',
         time: '10:00',
         location: 'Salão de Eventos',
         type: 'academic',
@@ -42,110 +42,116 @@ const eventos = [
     }
 ];
 
-// Função para gerar os cards de eventos dinamicamente
-function gerarCardsDeEventos(eventos) {
-    const container = document.querySelector('.noticias'); // Seção de notícias onde os cards serão inseridos
-    container.innerHTML = ''; // Limpar o conteúdo existente
+let currentIndex = 0; // Índice do evento atual
+let intervalId; // ID do intervalo para poder controlá-lo
+
+// Função para exibir os eventos no carrossel
+function exibirEventosNoCarrossel() {
+    const carousel = document.querySelector('.carousel');
+    carousel.innerHTML = ''; // Limpa antes de renderizar
 
     eventos.forEach(event => {
-        // Criar o elemento card
         const card = document.createElement('div');
-        card.classList.add('card'); // Atribui a classe 'card' ao div do evento
+        card.classList.add('evento-card');
 
-        // Criar o elemento de imagem
+        // Criando imagem
         const img = document.createElement('img');
-        img.src = event.image; // Usando a chave 'image' do objeto
-        img.alt = event.title;  // Usando a chave 'title' para o alt da imagem
+        img.src = event.image;
+        img.alt = event.title;
 
-        // Criar o conteúdo de informação
-        const infoDiv = document.createElement('div');
-        infoDiv.classList.add('info'); // Atribuindo a classe 'info' à div
-
-        // Criar o título
+        // Criando título
         const title = document.createElement('h3');
-        title.textContent = event.title; // Usando a chave 'title'
+        title.textContent = event.title;
 
-        // Criar a descrição
+        // Criando descrição
         const description = document.createElement('p');
-        description.textContent = event.description; // Usando a chave 'description'
+        description.textContent = event.description;
 
-        // Criar as informações adicionais (data, hora e local)
-        const details = document.createElement('p');
-        details.innerHTML = `<span class="material-symbols-outlined icon">event</span> ${event.date} às ${event.time} <span class="material-symbols-outlined icon">pin_drop</span> ${event.location}`; // Adicionando data, hora e local com ícones
+        // Criando data
+        const date = document.createElement('p');
+        date.textContent = `Data: ${event.date}`;
 
-        // Adicionar o título, descrição e detalhes à div 'info'
-        infoDiv.appendChild(title);
-        infoDiv.appendChild(description);
-        infoDiv.appendChild(details);
+        // Criando hora
+        const time = document.createElement('p');
+        time.textContent = `Hora: ${event.time}`;
 
-        // Adicionar a imagem e a div 'info' ao card
+        // Criando local
+        const location = document.createElement('p');
+        location.textContent = `Local: ${event.location}`;
+
+        // Montando o card com todas as informações
         card.appendChild(img);
-        card.appendChild(infoDiv);
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(date);
+        card.appendChild(time);
+        card.appendChild(location);
 
-        // Adicionar o card ao container de notícias
-        container.appendChild(card);
+        // Adicionando o card ao carrossel
+        carousel.appendChild(card);
     });
+
+    console.log("Eventos carregados no carrossel:", eventos);
+}
+// Função para controlar a navegação do carrossel
+function showSlide(index) {
+    const carousel = document.querySelector('.carousel');
+    const totalSlides = carousel.children.length;
+
+    // Limita o índice para o número de slides
+    if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+
+    // Move o carrossel
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Chamar a função para gerar os cards de eventos
-gerarCardsDeEventos(eventos);
-// Função para trocar o tema
-function changeTheme(theme) {
-    document.body.className = theme;
-    localStorage.setItem('theme', theme);
+// Função para navegação anterior
+document.querySelector('.prev').addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+});
+
+// Função para navegação seguinte
+document.querySelector('.next').addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+});
+
+// Função para avançar o slide automaticamente
+function avancarSlide() {
+    showSlide(currentIndex + 1);
 }
 
-// Carregar o tema salvo no localStorage
-window.onload = function () {
-    const savedTheme = localStorage.getItem('theme') || 'theme-light';
-    document.body.className = savedTheme;
-};
+// Função para pausar o carrossel quando o mouse passar sobre ele
+function pausarCarrossel() {
+    clearInterval(intervalId); // Para o intervalo quando o mouse passar sobre o carrossel
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".carousel");
-    const cards = document.querySelectorAll(".card");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-    let currentIndex = 0;
-    let autoSlide;
+// Função para reiniciar o carrossel quando o mouse sair
+function reiniciarCarrossel() {
+    intervalId = setInterval(avancarSlide, 5000); // Reinicia o intervalo após 5 segundos
+}
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-    }
+// Função que inicializa o carrossel
+function inicializarCarrossel() {
+    // Exibe o primeiro slide
+    showSlide(currentIndex);
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        updateCarousel();
-    }
+    // Configura o intervalo para avançar os slides a cada 5 segundos
+    intervalId = setInterval(avancarSlide, 5000);
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        updateCarousel();
-    }
+    // Adiciona os event listeners para parar e reiniciar o carrossel ao passar o mouse
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseover', pausarCarrossel);
+    carousel.addEventListener('mouseout', reiniciarCarrossel);
+}
 
-    function startAutoSlide() {
-        autoSlide = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(autoSlide);
-    }
-
-    nextButton.addEventListener("click", () => {
-        nextSlide();
-        stopAutoSlide();
-        startAutoSlide();
-    });
-
-    prevButton.addEventListener("click", () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
-    });
-
-    carousel.addEventListener("mouseenter", stopAutoSlide);
-    carousel.addEventListener("mouseleave", startAutoSlide);
-
-    startAutoSlide();
+// Chama as funções ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    exibirEventosNoCarrossel(); // Exibe os eventos no carrossel
+    inicializarCarrossel(); // Inicializa o carrossel (com navegação automática)
 });

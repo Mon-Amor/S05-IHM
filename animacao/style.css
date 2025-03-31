@@ -31,8 +31,9 @@ body {
 
 .theme-dark {
     background-color: var(--primary-color-dark);
-    color: var(--text-color-dark); /* Texto branco no tema escuro */
+    color: var(--text-color-dark);
 }
+
 
 /* Cabeçalho */
 header {
@@ -42,7 +43,7 @@ header {
     padding: 10px 20px;
     background-color: var(--primary-color-light);
     color: var(--secondary-color-light);
-    height: 60px; /* Ajustado para garantir boa visualização */
+    height: 60px;
 }
 
 header .icon {
@@ -86,7 +87,92 @@ header .logo {
     margin: 20px;
 }
 
-/* Seção de aulas */
+/* Card de notícias */
+.card-noticias {
+    background-color: var(--box-background-light); /* Isso deve ser alterado para o fundo branco no tema escuro */
+    color: var(--box-text-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+/* Tema escuro - ajustes para o card de notícias */
+.theme-dark .card-noticias {
+    background-color: var(--box-background-dark);  /* Fundo branco no tema escuro */
+    color: var(--box-text-dark);  /* Texto azul dentro das caixas */
+}
+/* Container do carrossel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 420px;
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+/* Cada card dentro do carrossel */
+.carousel .evento-card {
+    min-width: 100%; /* Faz com que cada card ocupe 100% da largura do carrossel */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+/* Imagem dentro do card */
+.carousel .evento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Botões de navegação fora da div carousel-container, mas dentro da área do carrossel */
+.prev, .next {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    z-index: 10;
+}
+/* Posicionamento do botão "prev" à esquerda */
+.prev {
+    left: 50px;
+}
+
+/* Posicionamento do botão "next" à direita */
+.next {
+    right: 50px;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 100%;
+    }
+    .card {
+        min-width: 100%;
+    }
+}
+
+/* Tema escuro - ajustes para a troca de cores */
+.theme-dark .card {
+    background-color: var(--box-background-dark);
+    color: var(--box-text-dark);
+}
+
+/* Cards de disciplinas */
 .aulas {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -101,118 +187,23 @@ header .logo {
     color: var(--box-text-light);
 }
 
+/* Tema escuro - ajustes para as divs de disciplina */
+.theme-dark .disciplina {
+    background-color: var(--box-background-dark);  /* Fundo branco no tema escuro */
+    color: var(--box-text-dark);  /* Texto azul dentro das caixas */
+}
+
+
 .disciplina h2 {
     margin: 0 0 10px;
 }
 
-/* Estilo para os ícones nas disciplinas */
 .disciplina .icones {
     display: flex;
-    flex-direction: column; /* Faz com que cada ícone + texto seja empilhado em linhas */
-    gap: 15px; /* Adiciona espaço entre cada par ícone + texto */
-}
-
-/* Estilo individual para cada ícone + texto */
-.disciplina .icones .icon-text {
-    display: flex;
-    flex-direction: row; /* Garante que ícone e texto fiquem lado a lado */
-    align-items: center; /* Alinha verticalmente */
-}
-
-/* Estilo para o ícone */
-.disciplina .icones .icon {
-    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-}
-
-/* Seção de notícias */
-.noticias {
-    margin: 20px;
-}
-
-.card {
-    background-color: var(--box-background-light);
-    padding: 15px;
-    border-radius: 8px;
-    color: var(--box-text-light);
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    align-items: stretch;
-    margin-bottom: 20px; /* Adiciona espaço entre os cards */
-    transition: transform 0.5s ease-in-out; /* inclua a animação */
+    gap: 15px;
 }
 
-.card img {
-    max-width: 100%; /* A imagem ocupará 100% da largura disponível */
-    height: auto; /* Manter a proporção da imagem */
-    border-radius: 5px; /* Borda arredondada para a imagem */
-}
-
-.card h2 {
-    margin: 0 0 10px;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
-
-/* Ajustando para o tema escuro */
-.theme-dark .card {
-    background-color: var(--box-background-dark);
-    color: var(--box-text-dark);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .aulas {
-        grid-template-columns: 1fr;
-    }
-
-    /* Ajustando o cabeçalho para telas pequenas */
-    header {
-        height: 50px; /* Diminui a altura para dispositivos móveis */
-    }
-
-    header .logo {
-        font-size: 30px; /* Reduz logo em telas menores */
-    }
-}
-
-/* Tema escuro - ajustes para a troca de cores */
-.theme-dark .disciplina,
-.theme-dark .card {
-    background-color: var(--box-background-dark);
-    color: var(--box-text-dark);
-}
-
-.theme-dark {
-    color: var(--text-color-dark);
+.disciplina .icones .icon {
+    margin-right: 10px;
 }
