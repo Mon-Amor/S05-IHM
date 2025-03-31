@@ -133,29 +133,29 @@ header .logo {
     border-radius: 5px;
 }
 
-/* Botões de navegação fora da div carousel-container, mas dentro da área do carrossel */
 .prev, .next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70%; /* Mantém no centro vertical do card */
+    transform: translateY(-50%); /* Ajusta a posição exata */
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
-    border-radius: 0;
+    border-radius: 0; /* Borda reta */
     cursor: pointer;
     font-size: 20px;
     border: none;
     z-index: 10;
 }
-/* Posicionamento do botão "prev" à esquerda */
+
+/* Posicionamento dos botões dentro dos cards */
 .prev {
-    left: 20px;
+    left: 5px; /* Ajuste para ficar dentro da borda esquerda do card */
 }
 
-/* Posicionamento do botão "next" à direita */
 .next {
-    right: 20px;
+    right: 5px; /* Ajuste para ficar dentro da borda direita do card */
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
     .carousel-container {
