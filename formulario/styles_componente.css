@@ -1,0 +1,65 @@
+:root {
+    --frequencia: #126ae2;
+    --nota: #126ae2;
+    --prova: #126ae2;
+}
+
+.titulo_aula {
+    font-weight: bold;
+    font-size: 18px; /* Aumentei o tamanho da fonte do título */
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px; /* Espaço entre o título e os outros elementos */
+}
+
+.p {
+    font-weight: normal; /* Deixa a informação de local e horário em texto normal */
+}
+
+.p b {
+    font-weight: bold; /* Deixa "local e horário" em negrito */
+}
+
+.labels {
+    display: flex;
+    gap: 10px; /* Espaço entre os itens de frequência e nota */
+    justify-content: space-between; /* Distribui os itens de forma mais equilibrada */
+    flex-wrap: wrap;
+    margin-bottom: 10px; /* Espaço entre as labels e a próxima linha */
+}
+
+.label-prova,
+.label-frequencia,
+.label-nota {
+    padding: 7px 15px;
+    border-radius: 500px;
+    text-align: center;
+}
+
+.label-prova {
+    background-color: var(--prova);
+    width: 100%; /* Prova ocupa toda a largura da linha */
+    margin-bottom: 10px; /* Espaço entre as labels */
+}
+
+.label-frequencia {
+    background-color: var(--frequencia);
+}
+
+.label-nota {
+    background-color: var(--nota);
+    font-weight: bold;
+    color: white;
+}
+
+/* Garantir que o texto nas labels tenha overflow oculto */
+.p_label {
+    font-size: 13px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
