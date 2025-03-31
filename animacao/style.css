@@ -136,12 +136,12 @@ header .logo {
 /* Botões de navegação fora da div carousel-container, mas dentro da área do carrossel */
 .prev, .next {
     position: absolute;
-    top: 190%;
+    top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
-    border-radius: 0%;
+    border-radius: 0;
     cursor: pointer;
     font-size: 20px;
     border: none;
