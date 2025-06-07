@@ -549,18 +549,17 @@ body.dark-theme footer {
   height: 100%;
 }
 
-/* Cada card dentro do carrossel, seja evento ou vaga */
+/* Cada card dentro do carrossel */
 .carousel > div {
   min-width: 100%;
   box-sizing: border-box;
-  padding: 10px 10px 10px 10px; /* aumenta o padding-left para empurrar o texto pra direita */
+  padding: 10px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  font-size: 18px; /* aumenta a fonte */
+  font-size: 18px;
   line-height: 1.4;
 }
-
 
 /* Imagem dentro do card */
 .carousel img {
@@ -568,14 +567,15 @@ body.dark-theme footer {
   height: 200px;
   object-fit: cover;
   border-radius: 5px;
-  margin-bottom: 15px; /* Espaço entre imagem e texto */
-  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
-/* Botões prev e next (revisados) */
-.prev, .next {
+/* Estilo padrão dos botões */
+.prev, .next,
+.prev-vagas, .next-vagas,
+.adicionar {
   position: absolute;
-  top: 95%; /* verticalmente centralizado no container */
+  top: 95%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -588,82 +588,69 @@ body.dark-theme footer {
   user-select: none;
   transition: background-color 0.3s ease;
 }
-.prev:hover, .next:hover {
-  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
+
+.prev:hover, .next:hover,
+.prev-vagas:hover, .next-vagas:hover,
+.adicionar:hover {
+  background-color: rgba(106, 27, 154, 0.9);
 }
 
-.prev {
-  left: 485px; /* mais confortável dentro do container */
+/* Posição dos botões no desktop */
+.prev, .prev-vagas {
+  left: 485px;
 }
-
-.next {
+.next, .next-vagas {
   right: 10px;
 }
-.prev-vagas, .next-vagas{
-  position: absolute;
-  top: 95%; /* verticalmente centralizado no container */
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 0;
-  cursor: pointer;
-  font-size: 24px;
-  border: none;
-  z-index: 10;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-.prev-vagas:hover, .next-vagas:hover {
-  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
-}
-
-.prev-vagas {
-  left: 485px; /* mais confortável dentro do container */
-}
-
-.next-vagas {
-  right: 10px;
+.adicionar {
+  left: 425px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .cards-wrapper {
-    flex-wrap: wrap; /* empilha bonitinho no mobile */
-      justify-content: center;
-  }
-
   .carousel-container {
-      height: 320px; /* menor altura no mobile */
+    height: 320px;
   }
+
   .carousel img {
-      height: 150px;
+    height: 150px;
   }
 
-}
-.adicionar{
-  position: absolute;
-  top: 95%; /* verticalmente centralizado no container */
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 7px 15px;
-  border-radius: 0;
-  cursor: pointer;
-  font-size: 24px;
-  border: none;
-  z-index: 10;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-.adicionar:hover {
-  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
+  .carousel > div {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  /* Reposiciona botões no mobile */
+  .prev, .next,
+  .prev-vagas, .next-vagas,
+  .adicionar {
+    top: unset;
+    bottom: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+
+  .prev, .prev-vagas {
+    left: 10px;
+  }
+
+  .next, .next-vagas {
+    right: 10px;
+  }
+
+  .adicionar {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cards-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-.adicionar {
-  left: 425px; /* mais confortável dentro do container */
-}
-
+/* Estilo do formulário */
 #formContainer {
   background: white;
   padding: 20px;
