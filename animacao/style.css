@@ -620,11 +620,13 @@ body.dark-theme footer {
     font-size: 16px;
     padding: 8px;
   }
+
   .card-noticias {
-    flex: 1 1 100%;  /* ocupa 100% no mobile */
-    max-width: 100%; /* remove limite de largura */
-    padding: 15px;   /* ajusta padding pro mobile */
-    font-size: 16px; /* reduz um pouco a fonte se necessário */
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: 350px;
+    padding: 15px;
+    font-size: 16px;
   }
 
   /* Reposiciona botões no mobile */
@@ -635,26 +637,18 @@ body.dark-theme footer {
     bottom: 10px;
     font-size: 20px;
     padding: 5px 10px;
+    right: 10px; /* joga todos pro canto direito */
+    left: unset; /* remove conflito */
+    transform: none; /* reseta transform do desktop */
   }
 
-  .prev, .prev-vagas {
-    left: 10px;
-  }
-
-  .next, .next-vagas {
-    right: 10px;
-  }
-
-  .adicionar {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
+  /* Cards se organizam melhor no mobile */
   .cards-wrapper {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
+
 
 /* Estilo do formulário */
 #formContainer {
