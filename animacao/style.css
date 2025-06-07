@@ -47,13 +47,13 @@ header {
 }
 
 header .icon {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 header .logo {
     font-size: 40px;
     font-weight: bold;
-    color: var(--secondary-color-light);
+    color: white;
 }
 
 /* Menu de troca de tema */
@@ -78,6 +78,11 @@ header .logo {
     transition: background-color 0.3s ease;
 }
 
+.svg_logo_inatel {
+    fill: white;
+  }
+  
+
 .theme-button:hover {
     background-color: var(--button-hover-color);
 }
@@ -87,90 +92,8 @@ header .logo {
     margin: 20px;
 }
 
-/* Card de notícias */
-.card-noticias {
-    background-color: var(--box-background-light); /* Isso deve ser alterado para o fundo branco no tema escuro */
-    color: var(--box-text-light);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-}
 
-/* Tema escuro - ajustes para o card de notícias */
-.theme-dark .card-noticias {
-    background-color: var(--box-background-dark);  /* Fundo branco no tema escuro */
-    color: var(--box-text-dark);  /* Texto azul dentro das caixas */
-}
-/* Container do carrossel */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 420px;
-}
 
-/* Carrossel */
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-
-/* Cada card dentro do carrossel */
-.carousel .evento-card {
-    min-width: 100%; /* Faz com que cada card ocupe 100% da largura do carrossel */
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10px;
-}
-/* Imagem dentro do card */
-.carousel .evento-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 70%; /* Mantém no centro vertical do card */
-    transform: translateY(-50%); /* Ajusta a posição exata */
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 0; /* Borda reta */
-    cursor: pointer;
-    font-size: 20px;
-    border: none;
-    z-index: 10;
-}
-
-/* Posicionamento dos botões dentro dos cards */
-.prev {
-    left: 5px; /* Ajuste para ficar dentro da borda esquerda do card */
-}
-
-.next {
-    right: 5px; /* Ajuste para ficar dentro da borda direita do card */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .carousel-container {
-        width: 100%;
-    }
-    .card {
-        min-width: 100%;
-    }
-}
-
-/* Tema escuro - ajustes para a troca de cores */
-.theme-dark .card {
-    background-color: var(--box-background-dark);
-    color: var(--box-text-dark);
-}
 
 /* Cards de disciplinas */
 .aulas {
@@ -198,12 +121,554 @@ header .logo {
     margin: 0 0 10px;
 }
 
-.disciplina .icones {
+.icones {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.disciplina .icones .icon {
-    margin-right: 10px;
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espaço entre ícone e texto */
+}
+
+.icon p {
+    margin: 0; /* tira margem padrão do parágrafo pra não empurrar */
+}
+
+.menu-wrapper {
+    position: relative;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.side-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: var(--box-background-light);
+    color: var(--box-text-light);
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#side-menu li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+ /* Tema claro */
+body.theme-light #side-menu {
+    background-color: var(--box-background-light); /* #003366 azul */
+    color: var(--box-text-light); /* branco */
+    box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+  }
+  
+  body.theme-light #side-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* linha clara no azul */
+  }
+  
+  body.theme-light #side-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* hover suave branco translúcido */
+  }
+  
+  /* Tema escuro */
+  body.theme-dark #side-menu {
+    background-color: var(--box-background-dark); /* branco */
+    color: var(--box-text-dark); /* azul #003366 */
+    box-shadow: 3px 0 12px rgba(0,0,0,0.25);
+  }
+  
+  body.theme-dark #side-menu li {
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1); /* borda azul clarinha */
+  }
+  
+  body.theme-dark #side-menu li:hover {
+    background-color: rgba(0, 51, 102, 0.1); /* hover azul translúcido */
+  }
+  
+  
+  
+  #side-menu li:hover {
+    background-color: var(--hover-bg);
+    border-radius: 6px;
+  }
+  
+
+  #side-menu {
+    position: fixed;
+    top: 60px; /* abaixo do header */
+    left: 0; /* mudou de right: 0 para left: 0 */
+    width: 250px;
+    height: calc(100% - 60px);
+    background-color: var(--box-background-light);
+    color: var(--box-text-light);
+    box-shadow: 3px 0 8px rgba(0,0,0,0.2); /* sombra para esquerda */
+  
+    transform: translateX(-100%); /* entra da esquerda agora */
+    opacity: 0;
+    visibility: hidden;
+  
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    z-index: 1000;
+  }
+  
+  #side-menu.active {
+    transform: translateX(0); /* mostra o menu */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  /* Linha separadora das opções */
+  #side-menu button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    text-align: left;
+  }
+  
+  .theme-light #side-menu button {
+    border-color: rgba(0, 51, 102, 0.3); /* linha visível no tema claro */
+  }
+  
+  .theme-dark #side-menu button {
+    border-color: rgba(0, 0, 0, 0.15); /* linha visível no tema escuro */
+  }
+  
+  #side-menu button:last-child {
+    border-bottom: none;
+  }
+  
+
+.menu-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-option:hover {
+    background-color: #eee;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arimo', sans-serif;
+    background-color: #f4f6f8;
+    overflow-x: hidden;
+  }
+  
+  .mensagens {
+    padding: 0 20px;
+    margin: 20px 0;
+}
+.mensagens h1 {
+    margin-bottom: 1rem;
+}
+
+.slider-aviso {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #003366;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0 15px;
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  justify-content: flex-start; /* alinha à esquerda */
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  font-weight: 500;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.aviso.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  pointer-events: auto;
+}
+
+.aviso i {
+  font-size: 1.3rem;
+  color: #00aaff; /* Azul claro Inatel pro destaque */
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .mensagens h1 {
+    font-size: 1.4rem;
+  }
+
+  .slider-aviso {
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  .aviso i {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tema dark/light continua igual */
+.theme-dark .slider-aviso {
+  background-color: var(--box-background-dark);
+  color: var(--box-text-dark);
+}
+
+.theme-light .slider-aviso {
+  background-color: var(--box-background-light);
+  color: var(--box-text-light);
+}
+
+.theme-dark .slider-aviso i {
+  color: var(--box-text-dark);
+}
+
+.theme-light .slider-aviso i {
+  color: var(--box-text-light);
+}
+footer {
+  background: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 4px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+
+body.dark-theme footer {
+  background-color: white; /* Azul Inatel escuro */
+  color: var(--secondary-color-dark); /* Branco */
+}
+.carousel-vagas {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.vaga-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Slide ativo (central, visível) */
+.vaga-card.active-slide {
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Entra pela direita */
+.vaga-card.slide-in-right {
+  opacity: 1;
+  transform: translateX(100%);
+  z-index: 2;
+}
+
+/* Entra pela esquerda */
+.vaga-card.slide-in-left {
+  opacity: 1;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+/* Sai pela esquerda */
+.vaga-card.slide-out-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* Sai pela direita */
+.vaga-card.slide-out-right {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 1;
+}
+.carousel-vagas {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.vaga-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Slide ativo (central, visível) */
+.vaga-card.active-slide {
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Entra pela direita */
+.vaga-card.slide-in-right {
+  opacity: 1;
+  transform: translateX(100%);
+  z-index: 2;
+}
+
+/* Entra pela esquerda */
+.vaga-card.slide-in-left {
+  opacity: 1;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+/* Sai pela esquerda */
+.vaga-card.slide-out-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* Sai pela direita */
+.vaga-card.slide-out-right {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 1;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-noticias {
+  background-color: var(--box-background-light);
+  color: var(--box-text-light);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  /* remove margin auto pra não centralizar cada um individualmente */
+  margin: 10px 10px; /* só um espaçamento lateral, não centralizar */
+  box-sizing: border-box;
+  flex: 1 1 50%; /* quase metade da largura, deixa mais largo */
+  max-width: 840px; /* aumenta o máximo pra não travar */
+  width: auto; /* deixa o flex controlar a largura */
+}
+
+
+
+/* Tema escuro */
+.theme-dark .card-noticias {
+  background-color: var(--box-background-dark); /* fundo escuro */
+  color: var(--box-text-dark); /* texto azul */
+}
+
+/* Container do carrossel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
+}
+
+/* Carrossel flexível */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  height: 100%;
+}
+
+/* Cada card dentro do carrossel, seja evento ou vaga */
+.carousel > div {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px; /* aumenta o padding-left para empurrar o texto pra direita */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px; /* aumenta a fonte */
+  line-height: 1.4;
+}
+
+
+/* Imagem dentro do card */
+.carousel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px; /* Espaço entre imagem e texto */
+  border-radius: 5px;
+}
+
+/* Botões prev e next (revisados) */
+.prev, .next {
+  position: absolute;
+  top: 95%; /* verticalmente centralizado no container */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
+}
+
+.prev {
+  left: 485px; /* mais confortável dentro do container */
+}
+
+.next {
+  right: 10px;
+}
+.prev-vagas, .next-vagas{
+  position: absolute;
+  top: 95%; /* verticalmente centralizado no container */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.prev-vagas:hover, .next-vagas:hover {
+  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
+}
+
+.prev-vagas {
+  left: 485px; /* mais confortável dentro do container */
+}
+
+.next-vagas {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    flex-wrap: wrap; /* empilha bonitinho no mobile */
+      justify-content: center;
+  }
+
+  .carousel-container {
+      height: 320px; /* menor altura no mobile */
+  }
+  .carousel img {
+      height: 150px;
+  }
+
+}
+.adicionar{
+  position: absolute;
+  top: 95%; /* verticalmente centralizado no container */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 7px 15px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.adicionar:hover {
+  background-color: rgba(106, 27, 154, 0.9); /* um roxinho sagaz no hover */
+}
+
+.adicionar {
+  left: 425px; /* mais confortável dentro do container */
+}
+
+#formContainer {
+  background: white;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 10;
 }

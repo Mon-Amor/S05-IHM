@@ -1,0 +1,447 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arimo', sans-serif;
+}
+
+:root {
+    /* Tema claro - cores do Inatel */
+    --primary-color-light: #003366; /* Azul Inatel */
+    --secondary-color-light: #ffffff; /* Branco */
+    --text-color-light: #003366; /* Azul Inatel para o texto */
+    --box-background-light: #003366; /* Azul Inatel para as caixas */
+    --box-text-light: #ffffff; /* Texto branco nas caixas */
+
+    /* Tema escuro - ajuste de contraste */
+    --primary-color-dark: #003366; /* Azul Inatel */
+    --secondary-color-dark: #ffffff; /* Branco */
+    --text-color-dark: #ffffff; /* Texto branco fora das caixas no tema escuro */
+    --box-background-dark: #ffffff; /* Caixa branca no tema escuro */
+    --box-text-dark: #003366; /* Texto azul dentro das caixas */
+    --button-color: #6A1B9A; /* Roxo para os botões */
+    --button-hover-color: #4a148c; /* Roxo mais escuro no hover */
+}
+
+.theme-light {
+    background-color: var(--secondary-color-light);
+    color: var(--text-color-light);
+}
+
+.theme-dark {
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
+}
+
+.theme-dark h1 {
+  color: var(--secondary-color-dark); /* branco */
+}
+
+
+body {
+  background-color: #f4f4f4; /* Pode trocar pra um cinza bem clarinho se quiser */
+  color: var(--primary-color-light); /* Azul Inatel para o texto geral */
+  line-height: 1.6;
+    margin: 0;
+  padding: 0;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: var(--primary-color-light); /* Azul Inatel */
+}
+
+strong {
+  display: block;
+  margin: 10px auto;
+  max-width: 800px;
+  background-color: #fff3cd; /* Mantive amarelo suave para destaque */
+  padding: 10px;
+  border-left: 5px solid #ffc107; /* Amarelo forte */
+  font-weight: 700;
+  color: #856404; /* Marrom escuro */
+}
+
+form {
+  max-width: 800px;
+  margin: 20px auto;
+  background: var(--secondary-color-light); /* Branco */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--primary-color-light); /* Azul Inatel */
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="email"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  color: var(--primary-color-light);
+  background: #fff;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form button[type="submit"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color-light); /* Azul Inatel */
+  color: var(--secondary-color-light); /* Branco */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #00264d; /* Azul Inatel mais escuro */
+}
+
+
+/* Aviso mantido conforme seu código, sem alterações */
+.aviso-label {
+  max-width: 800px;
+  margin: 20px auto 0;
+  background-color: #ffeb3b;
+  color: #000;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.aviso-text {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  border: 1px solid #ffeb3b;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff9c4;
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arimo', sans-serif;
+}
+
+:root {
+  /* Tema claro */
+  --background-light: #fff;
+  --text-light: #fff; /* texto branco no form */
+  --input-bg-light: #003366; /* fundo azul da caixa */
+  --input-border-light: #fff; /* borda branca */
+  --button-bg-light: #fff; /* botão branco */
+  --button-text-light: #003366; /* texto azul no botão */
+
+  /* Tema escuro - INVERTIDO do claro */
+  --background-dark: #003366; /* fundo azul Inatel geral */
+  --text-dark: #003366; /* texto azul no form */
+  --input-bg-dark: #fff; /* fundo branco da caixa */
+  --input-border-dark: #003366; /* borda azul */
+  --button-bg-dark: #003366; /* botão azul */
+  --button-text-dark: #fff; /* texto branco no botão */
+   --text-color-light: #0055cc; /* azul para tema claro */
+  --text-color-dark: #fff;     /* branco para tema escuro */
+}
+
+/* Tema Claro */
+.theme-light {
+  background-color: var(--background-light);
+  color: #003366; /* texto azul fora do form */
+}
+
+.theme-light form {
+  background-color: var(--input-bg-light); /* fundo azul */
+  color: var(--text-light); /* texto branco */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.theme-light form label {
+  color: var(--text-light);
+}
+
+.theme-light form input,
+.theme-light form textarea,
+.theme-light form select,
+.theme-light form textarea {
+  background-color: #fff; /* fundo azul forte */
+  color: var(--text-light); /* texto branco */
+  border: 1px solid var(--input-border-light); /* borda branca */
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.theme-light form select::placeholder,
+.theme-light form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* placeholder branco translúcido */
+}
+
+.theme-light form button[type="submit"] {
+  background-color: var(--button-bg-light); /* branco */
+  color: var(--button-text-light); /* azul */
+  border: 2px solid var(--primary-color-light); /* borda azul pra destacar */
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-light form button[type="submit"]:hover {
+  background-color: var(--primary-color-light); /* azul */
+  color: var(--secondary-color-light); /* branco */
+}
+
+.theme-light form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* placeholder branco translúcido */
+}
+
+/* Tema Escuro - INVERTIDO do claro */
+.theme-dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.theme-dark form {
+  background-color: var(--input-bg-dark); /* fundo branco */
+  color: var(--text-dark); /* texto azul */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.theme-dark form label {
+  color: var(--text-dark);
+}
+
+.theme-dark form input,
+.theme-dark form textarea,
+.theme-dark form select {
+  background-color: var(--input-bg-dark); /* fundo branco */
+  color: var(--text-dark); /* texto azul */
+  border: 1px solid var(--input-border-dark); /* borda azul */
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.theme-dark form input::placeholder,
+.theme-dark form textarea::placeholder,
+.theme-dark form select::placeholder {
+  color: rgba(0, 51, 102, 0.7); /* placeholder azul translúcido */
+}
+
+.theme-dark form button[type="submit"] {
+  background-color: var(--button-bg-dark); /* botão azul */
+  color: var(--button-text-dark); /* texto branco */
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-dark form button[type="submit"]:hover {
+  background-color: #002244; /* azul mais escuro no hover */
+}
+
+
+
+body {
+  background-color: #f4f4f4; /* Pode trocar pra um cinza bem clarinho se quiser */
+  color: var(--primary-color-light); /* Azul Inatel para o texto geral */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: var(--primary-color-light); /* Azul Inatel */
+}
+
+strong {
+  display: block;
+  margin: 10px auto;
+  max-width: 800px;
+  background-color: #fff3cd; /* Mantive amarelo suave para destaque */
+  padding: 10px;
+  border-left: 5px solid #ffc107; /* Amarelo forte */
+  font-weight: 700;
+  color: #856404; /* Marrom escuro */
+}
+
+form {
+  max-width: 800px;
+  margin: 20px auto;
+  background: var(--secondary-color-light); /* Branco */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--primary-color-light); /* Azul Inatel */
+}
+
+form textarea#descricao,
+form select#categoria {
+  border: 1px solid #ccc !important; /* borda padrão */
+  border-radius: 4px !important;
+  background: #fff !important;
+  color: var(--primary-color-light) !important;
+  padding: 10px !important;
+  margin-top: 5px !important;
+}
+
+
+form input[type="text"],
+form input[type="url"],
+form input[type="email"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  color: var(--primary-color-light);
+  background: #fff;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form button[type="submit"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color-light); /* Azul Inatel */
+  color: var(--secondary-color-light); /* Branco */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #00264d; /* Azul Inatel mais escuro */
+}
+
+
+
+
+
+/* Aviso mantido conforme seu código, sem alterações */
+.aviso-label {
+  max-width: 800px;
+  margin: 20px auto 0;
+  background-color: #ffeb3b;
+  color: #000;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.aviso-text {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  border: 1px solid #ffeb3b;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff9c4;
+}
+/* Container do header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* espaçamento lateral */
+  background-color: var(--primary-color-dark); /* azul Inatel escuro */
+  height: 70px;
+
+
+  border-bottom: none;
+
+  z-index: 100;
+}
+
+/* Ícones (home e contraste) */
+header .icon {
+  color: var(--secondary-color-dark); /* branco */
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+
+
+/* Botão home (ícone) */
+header .home {
+  background: none;
+  border: none;
+  color: #fff; /* branco */
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+
+
+.svg_logo_inatel {
+    fill: white;
+  }
+body, html {
+  margin: 0; padding: 0;
+}
